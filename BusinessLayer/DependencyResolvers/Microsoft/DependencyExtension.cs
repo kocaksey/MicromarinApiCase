@@ -11,6 +11,11 @@ using BusinessLayer.ValidaitonRules.ProductValidaiton;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.UnitOfWork;
+using DTOsLayer.Concrete.CategoryDtos;
+using DTOsLayer.Concrete.CustomerDtos;
+using DTOsLayer.Concrete.EmployeeDtos;
+using DTOsLayer.Concrete.OrderDetailDtos;
+using DTOsLayer.Concrete.OrderDtos;
 using DTOsLayer.Concrete.ProductDtos;
 using EntityLayer.Contexts;
 using FluentValidation;
@@ -68,8 +73,24 @@ namespace BusinessLayer.DependencyResolvers.Microsoft
             services.AddScoped<IOrderRespository, OrderRepository>();
 
 
-            services.AddTransient<IValidator<ProductCreateDto>, CategoryCreateDtoValidator>();
-            services.AddTransient<IValidator<ProductUpdateDto>, CategoryUpdateDtoValidator>();
+            services.AddTransient<IValidator<ProductCreateDto>, ProductCreateDtoValidator>();
+            services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
+
+
+            services.AddTransient<IValidator<OrderCreateDto>, OrderCreateDtoValidator>();
+            services.AddTransient<IValidator<OrderUpdateDto>, OrderUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<OrderDetailCreateDto>, OrderDetailCreateDtoValidator>();
+            services.AddTransient<IValidator<OrderDetailUpdateDto>, OrderDetailUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<EmployeeCreateDto>, EmployeeCreateDtoValidator>();
+            services.AddTransient<IValidator<EmployeeUpdateDto>, EmployeeUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<CustomerCreateDto>, CustomerCreateDtoValidator>();
+            services.AddTransient<IValidator<CustomerUpdateDto>, CustomerUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<CategoryCreateDto>, CategoryCreateDtoValidator>();
+            services.AddTransient<IValidator<CategoryUpdateDto>, CategoryUpdateDtoValidator>();
 
 
 
