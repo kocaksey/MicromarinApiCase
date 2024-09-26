@@ -23,6 +23,6 @@ namespace BusinessLayer.Abstract
 
         Task<IResponse> Remove(int id);
 
-        Task<IResponse<UpdateDto>> Update(UpdateDto dto);
+        Task<IResponse<UpdateDto>> Update(UpdateDto dto); //
     }
 }
