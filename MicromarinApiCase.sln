@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTOsLayer", "DTOsLayer\DTOsLayer.csproj", "{C4C90F67-0015-473A-B89B-150D8FC5FA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLayer", "CommonLayer\CommonLayer.csproj", "{A60A1593-F444-478A-8234-F68A987095CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLayer", "CommonLayer\CommonLayer.csproj", "{A60A1593-F444-478A-8234-F68A987095CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backups", "Backups", "{7FDF8BB1-39F3-4FC7-AB3F-C99CE6D56F9A}"
+	ProjectSection(SolutionItems) = preProject
+		DataAccessLayer\MicromarinApiDB.bak = DataAccessLayer\MicromarinApiDB.bak
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
