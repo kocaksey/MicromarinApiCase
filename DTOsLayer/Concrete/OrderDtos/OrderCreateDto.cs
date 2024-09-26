@@ -10,7 +10,7 @@ namespace DTOsLayer.Concrete.OrderDtos
 {
     public class OrderCreateDto : IDto
     {
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         public int? EmployeeId { get; set; }
         public Customer Customer { get; set; }
