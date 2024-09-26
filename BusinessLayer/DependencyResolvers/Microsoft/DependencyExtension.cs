@@ -1,6 +1,11 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.Mappings.CategoryMapping;
+using BusinessLayer.Mappings.CustomerMapping;
+using BusinessLayer.Mappings.EmployeeMapping;
+using BusinessLayer.Mappings.OrderDetailMapping;
+using BusinessLayer.Mappings.OrderMapping;
 using BusinessLayer.Mappings.ProductMapping;
 using BusinessLayer.ValidaitonRules.ProductValidaiton;
 using DataAccessLayer.Abstract;
@@ -28,6 +33,14 @@ namespace BusinessLayer.DependencyResolvers.Microsoft
             var configuration = new MapperConfiguration(opt =>
             {
                 opt.AddProfile(new ProductProfile());
+                opt.AddProfile(new CategoryProfile());
+                opt.AddProfile(new EmployeeProfile());
+                opt.AddProfile(new OrderDetailProfile());
+                opt.AddProfile(new OrderProfile());
+                opt.AddProfile(new CustomerProfile());
+
+
+
             });
 
             var mapper = configuration.CreateMapper();
@@ -36,12 +49,30 @@ namespace BusinessLayer.DependencyResolvers.Microsoft
 
             services.AddScoped<IUow, Uow>();
 
-            //servis bağımlılıkları buraya
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductRepository, ProductRepository>();
 
-            services.AddTransient<IValidator<ProductCreateDto>, ProductCreateDtoValidator>();
-            services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            services.AddScoped<IOrderDetailService, OrderDetailService>();
+            services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRespository, OrderRepository>();
+
+
+            services.AddTransient<IValidator<ProductCreateDto>, CategoryCreateDtoValidator>();
+            services.AddTransient<IValidator<ProductUpdateDto>, CategoryUpdateDtoValidator>();
+
+
+
 
         }
     }

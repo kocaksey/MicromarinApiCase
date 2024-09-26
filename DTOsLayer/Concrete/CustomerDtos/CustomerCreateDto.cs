@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DTOsLayer.Concrete.CustomerDtos
 {
-    internal class CustomerCreateDto :IDto
+    public class CustomerCreateDto :IDto
     {
         public string CompanyName { get; set; } = null!;
 
