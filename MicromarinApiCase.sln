@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backups", "Backups", "{7FDF8BB1-39F3-4FC7-AB3F-C99CE6D56F9A}"
 	ProjectSection(SolutionItems) = preProject
 		DataAccessLayer\MicromarinApiDB.bak = DataAccessLayer\MicromarinApiDB.bak
+		..\MicromarinApiDB.sql = ..\MicromarinApiDB.sql
 	EndProjectSection
 EndProject
 Global
